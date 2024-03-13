@@ -16,6 +16,7 @@
 		828031D52BA23FEA006FA01B /* ChatterBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031D42BA23FEA006FA01B /* ChatterBoxTests.swift */; };
 		828031DF2BA23FEA006FA01B /* ChatterBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031DE2BA23FEA006FA01B /* ChatterBoxUITests.swift */; };
 		828031E12BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031E02BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift */; };
+		828031EE2BA23FFD006FA01B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 828031ED2BA23FFD006FA01B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		828031DA2BA23FEA006FA01B /* ChatterBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828031DE2BA23FEA006FA01B /* ChatterBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterBoxUITests.swift; sourceTree = "<group>"; };
 		828031E02BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		828031ED2BA23FFD006FA01B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		828031B12BA23FE7006FA01B = {
 			isa = PBXGroup;
 			children = (
+				828031ED2BA23FFD006FA01B /* .gitignore */,
 				828031BC2BA23FE7006FA01B /* ChatterBox */,
 				828031D32BA23FEA006FA01B /* ChatterBoxTests */,
 				828031DD2BA23FEA006FA01B /* ChatterBoxUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828031EE2BA23FFD006FA01B /* .gitignore in Resources */,
 				828031CA2BA23FEA006FA01B /* LaunchScreen.storyboard in Resources */,
 				828031C72BA23FEA006FA01B /* Assets.xcassets in Resources */,
 				828031C52BA23FE7006FA01B /* Main.storyboard in Resources */,
