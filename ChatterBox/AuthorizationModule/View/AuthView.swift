@@ -9,13 +9,56 @@ import UIKit
 
 final class AuthView: UIView {
     
-    let authLabel = UILabel(text: "Sign in", textAlignment: .center, fontSize: 28)
-    let instructionLabel = UILabel(text: "Use your account")
+    //MARK: Views
+    let authLabel: UILabel = {
+        
+        let label = UILabel(text: "Sign in", textAlignment: .center)
+        
+        label.font = UIFont(name: FontConstants.FontName.normal.rawValue,
+                            size: FontConstants.FontSize.title.rawValue)
+        
+        setShadow(to: label, shadowOpacity: .label)
+        
+        return label
+    }()
     
-    var loginField = UITextField(placeholder: "Login")
+    let instructionLabel: UILabel = {
+        
+        let label = UILabel(text: "Use your account")
+        
+        label.font = UIFont(name: FontConstants.FontName.normal.rawValue,
+                            size: FontConstants.FontSize.normal.rawValue)
+        
+        setShadow(to: label, shadowOpacity: .label)
+        
+        return label
+    }()
+    
+    var loginField: UITextField = {
+        
+        var textField = UITextField(placeholder: "Login")
+        
+        textField.font = UIFont(name: FontConstants.FontName.normal.rawValue,
+                                size: FontConstants.FontSize.normal.rawValue)
+        
+        textField.borderStyle = .roundedRect
+        textField.clearButtonMode = .whileEditing
+        textField.disableCorrection()
+        
+        return textField
+    }()
+    
     var passwordField: UITextField = {
         
         var textField = UITextField(placeholder: "Password")
+        
+        textField.font = UIFont(name: FontConstants.FontName.normal.rawValue,
+                                size: FontConstants.FontSize.normal.rawValue)
+        
+        textField.borderStyle = .roundedRect
+        textField.clearButtonMode = .whileEditing
+        textField.disableCorrection()
+        
         textField.isSecureTextEntry = true
         
         return textField
@@ -24,8 +67,25 @@ final class AuthView: UIView {
     let createAccountButton: UIButton = {
         
         let button = UIButton(title: "Create account", titleColor: .systemBlue)
+        
+        button.titleLabel?.font = UIFont(name: FontConstants.FontName.normal.rawValue, size: 14)
+        
         button.contentHorizontalAlignment = .leading
 //        button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+        
+        return button
+    }()
+    
+    let signInButton: UIButton = {
+        
+        let button = UIButton(title: "Sign in", titleColor: .white)
+        
+        button.titleLabel?.font =  UIFont(name: FontConstants.FontName.bold.rawValue,
+                                          size: FontConstants.FontSize.normal.rawValue)
+        
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 7
+        setShadow(to: button, shadowOpacity: .button)
         
         return button
     }()
@@ -47,24 +107,26 @@ final class AuthView: UIView {
 //MARK: Adding Subviews and setup of constraints
 extension AuthView {
     
-    func setupViews() {
+    private func setupViews() {
         self.addSubview(authLabel)
         self.addSubview(instructionLabel)
         self.addSubview(loginField)
         self.addSubview(passwordField)
         self.addSubview(createAccountButton)
+        self.addSubview(signInButton)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         setupAuthLabelConstraints()
         setupInstructionLabelConstraints()
         setupLoginFieldConstraints()
         setupPasswordFieldConstraints()
         setupCreateAccountButtonConstraints()
+        setupSignInButtonConstraints()
     }
     
-    func setupAuthLabelConstraints() {
-        
+    private func setupAuthLabelConstraints() {
+
         authLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -74,8 +136,8 @@ extension AuthView {
         ])
     }
     
-    func setupInstructionLabelConstraints() {
-        
+    private func setupInstructionLabelConstraints() {
+        print(instructionLabel.font.pointSize)
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -84,30 +146,30 @@ extension AuthView {
             instructionLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
     }
-    
-    func setupLoginFieldConstraints() {
+    //FIXME: Delete
+    private func setupLoginFieldConstraints() {
         
         loginField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            loginField.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 15),
+            loginField.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 20),
             loginField.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             loginField.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
     }
     
-    func setupPasswordFieldConstraints() {
+    private func setupPasswordFieldConstraints() {
         
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 15),
+            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 20),
             passwordField.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             passwordField.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
     }
     
-    func setupCreateAccountButtonConstraints() {
+    private func setupCreateAccountButtonConstraints() {
         
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -116,6 +178,17 @@ extension AuthView {
             createAccountButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             createAccountButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3),
             createAccountButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func setupSignInButtonConstraints() {
+        
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            signInButton.topAnchor.constraint(equalTo: createAccountButton.bottomAnchor, constant: 30),
+            signInButton.centerXAnchor.constraint(equalTo: authLabel.centerXAnchor),
+            signInButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3)
         ])
     }
 }
