@@ -9,23 +9,24 @@ import UIKit
 
 final class AuthViewController: UIViewController {
     
-    private var authView: AuthView? {return self.view as? AuthView}
+    var authView = AuthView()
     var presenter: AuthPresenterProtocol?
     
     //MARK: View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.authView?.createAccountVCBlock = { [weak self] sender in
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(authView)
+        setupAuthViewConstraints()
+        
+        self.authView.createAccountVCBlock = { [weak self] sender in
             self?.createAccountAction(sender)
         }
-        self.authView?.signInVCBlock = { [weak self] sender in
+        self.authView.signInVCBlock = { [weak self] sender in
             self?.signInAction(sender)
         }
-    }
-    
-    override func loadView() {
-        self.view = AuthView(frame: UIScreen.main.bounds)
     }
     
     func createAccountAction(_ sender: UIButton) {
@@ -34,6 +35,21 @@ final class AuthViewController: UIViewController {
     
     func signInAction(_ sender: UIButton) {
         presenter?.signIn()
+    }
+}
+
+extension AuthViewController {
+    
+    func setupAuthViewConstraints() {
+        
+        authView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            authView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            authView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            authView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            authView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4)
+        ])
     }
 }
 

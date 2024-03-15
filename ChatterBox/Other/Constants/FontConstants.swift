@@ -15,6 +15,6 @@ struct FontConstants {
     }
     enum FontSize: CGFloat {
         case normal = 18
-        case title = 28
+        case title = 26
     }
 }

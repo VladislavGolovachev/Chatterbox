@@ -68,6 +68,15 @@ final class AuthView: UIView {
         return textField
     }()
     
+    var infoLabel: UILabel = {
+        
+        let label = UILabel(text: "")
+        
+        label.font = UIFont(name: FontConstants.FontName.normal.rawValue, size: 14)
+        
+        return label
+    }()
+    
     let createAccountButton: UIButton = {
         
         let button = UIButton(title: "Create account", titleColor: .systemBlue)
@@ -126,6 +135,7 @@ extension AuthView {
         self.addSubview(instructionLabel)
         self.addSubview(loginField)
         self.addSubview(passwordField)
+        self.addSubview(infoLabel)
         self.addSubview(createAccountButton)
         self.addSubview(signInButton)
     }
@@ -138,6 +148,7 @@ extension AuthView {
         setupInstructionLabelConstraints()
         setupLoginFieldConstraints()
         setupPasswordFieldConstraints()
+        setupInfoLabelConstraints()
         setupCreateAccountButtonConstraints()
         setupSignInButtonConstraints()
     }
@@ -147,7 +158,7 @@ extension AuthView {
         authLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            authLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 210),//30
+            authLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),//30
             authLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
             authLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor)
         ])
@@ -186,12 +197,23 @@ extension AuthView {
         ])
     }
     
+    private func setupInfoLabelConstraints() {
+        
+        infoLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            infoLabel.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 10),
+            infoLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
+            infoLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
+        ])
+    }
+    
     private func setupCreateAccountButtonConstraints() {
         
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            createAccountButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 25),
+            createAccountButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 15),
             createAccountButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             createAccountButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3),
             createAccountButton.heightAnchor.constraint(equalToConstant: 20)
