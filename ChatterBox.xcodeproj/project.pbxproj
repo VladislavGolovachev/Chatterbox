@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82790A182BA396B400FD7A3A /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790A172BA396B400FD7A3A /* FontConstants.swift */; };
+		82790A1A2BA396C000FD7A3A /* ShadowConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790A192BA396C000FD7A3A /* ShadowConstants.swift */; };
+		82790A1E2BA3986500FD7A3A /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82790A1D2BA3986500FD7A3A /* UIUtils.swift */; };
 		828031BE2BA23FE7006FA01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031BD2BA23FE7006FA01B /* AppDelegate.swift */; };
 		828031C02BA23FE7006FA01B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031BF2BA23FE7006FA01B /* SceneDelegate.swift */; };
-		828031C22BA23FE7006FA01B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031C12BA23FE7006FA01B /* ViewController.swift */; };
-		828031C52BA23FE7006FA01B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828031C32BA23FE7006FA01B /* Main.storyboard */; };
+		828031C22BA23FE7006FA01B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031C12BA23FE7006FA01B /* AuthViewController.swift */; };
 		828031C72BA23FEA006FA01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828031C62BA23FEA006FA01B /* Assets.xcassets */; };
 		828031CA2BA23FEA006FA01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828031C82BA23FEA006FA01B /* LaunchScreen.storyboard */; };
 		828031D52BA23FEA006FA01B /* ChatterBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031D42BA23FEA006FA01B /* ChatterBoxTests.swift */; };
 		828031DF2BA23FEA006FA01B /* ChatterBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031DE2BA23FEA006FA01B /* ChatterBoxUITests.swift */; };
 		828031E12BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031E02BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift */; };
 		828031EE2BA23FFD006FA01B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 828031ED2BA23FFD006FA01B /* .gitignore */; };
+		828031F42BA24BB5006FA01B /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031F32BA24BB5006FA01B /* AuthPresenter.swift */; };
+		828031F62BA25A01006FA01B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031F52BA25A01006FA01B /* Extensions.swift */; };
+		828031FA2BA267F5006FA01B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828031F92BA267F5006FA01B /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82790A172BA396B400FD7A3A /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
+		82790A192BA396C000FD7A3A /* ShadowConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConstants.swift; sourceTree = "<group>"; };
+		82790A1D2BA3986500FD7A3A /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		828031BA2BA23FE7006FA01B /* ChatterBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatterBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828031BD2BA23FE7006FA01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828031BF2BA23FE7006FA01B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		828031C12BA23FE7006FA01B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		828031C42BA23FE7006FA01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		828031C12BA23FE7006FA01B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		828031C62BA23FEA006FA01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		828031C92BA23FEA006FA01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		828031CB2BA23FEA006FA01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +58,9 @@
 		828031DE2BA23FEA006FA01B /* ChatterBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterBoxUITests.swift; sourceTree = "<group>"; };
 		828031E02BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		828031ED2BA23FFD006FA01B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		828031F32BA24BB5006FA01B /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		828031F52BA25A01006FA01B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		828031F92BA267F5006FA01B /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82790A1B2BA396C500FD7A3A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				82790A172BA396B400FD7A3A /* FontConstants.swift */,
+				82790A192BA396C000FD7A3A /* ShadowConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		82790A1F2BA39A8500FD7A3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				828031F52BA25A01006FA01B /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82790A202BA3BB3400FD7A3A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				82790A1D2BA3986500FD7A3A /* UIUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		82790A212BA3BB7D00FD7A3A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				82790A1B2BA396C500FD7A3A /* Constants */,
+				82790A1F2BA39A8500FD7A3A /* Extensions */,
+				82790A202BA3BB3400FD7A3A /* Utilities */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		828031B12BA23FE7006FA01B = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +149,8 @@
 			children = (
 				828031BD2BA23FE7006FA01B /* AppDelegate.swift */,
 				828031BF2BA23FE7006FA01B /* SceneDelegate.swift */,
-				828031C12BA23FE7006FA01B /* ViewController.swift */,
-				828031C32BA23FE7006FA01B /* Main.storyboard */,
+				828031EF2BA2480A006FA01B /* AuthorizationModule */,
+				82790A212BA3BB7D00FD7A3A /* Other */,
 				828031C62BA23FEA006FA01B /* Assets.xcassets */,
 				828031C82BA23FEA006FA01B /* LaunchScreen.storyboard */,
 				828031CB2BA23FEA006FA01B /* Info.plist */,
@@ -128,6 +173,32 @@
 				828031E02BA23FEA006FA01B /* ChatterBoxUITestsLaunchTests.swift */,
 			);
 			path = ChatterBoxUITests;
+			sourceTree = "<group>";
+		};
+		828031EF2BA2480A006FA01B /* AuthorizationModule */ = {
+			isa = PBXGroup;
+			children = (
+				828031F12BA24B6D006FA01B /* Presenter */,
+				828031F02BA24821006FA01B /* View */,
+			);
+			path = AuthorizationModule;
+			sourceTree = "<group>";
+		};
+		828031F02BA24821006FA01B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828031C12BA23FE7006FA01B /* AuthViewController.swift */,
+				828031F92BA267F5006FA01B /* AuthView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828031F12BA24B6D006FA01B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828031F32BA24BB5006FA01B /* AuthPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +308,6 @@
 				828031EE2BA23FFD006FA01B /* .gitignore in Resources */,
 				828031CA2BA23FEA006FA01B /* LaunchScreen.storyboard in Resources */,
 				828031C72BA23FEA006FA01B /* Assets.xcassets in Resources */,
-				828031C52BA23FE7006FA01B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +332,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				828031C22BA23FE7006FA01B /* ViewController.swift in Sources */,
+				828031F62BA25A01006FA01B /* Extensions.swift in Sources */,
+				828031F42BA24BB5006FA01B /* AuthPresenter.swift in Sources */,
+				82790A182BA396B400FD7A3A /* FontConstants.swift in Sources */,
+				828031FA2BA267F5006FA01B /* AuthView.swift in Sources */,
+				828031C22BA23FE7006FA01B /* AuthViewController.swift in Sources */,
 				828031BE2BA23FE7006FA01B /* AppDelegate.swift in Sources */,
+				82790A1E2BA3986500FD7A3A /* UIUtils.swift in Sources */,
 				828031C02BA23FE7006FA01B /* SceneDelegate.swift in Sources */,
+				82790A1A2BA396C000FD7A3A /* ShadowConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		828031C32BA23FE7006FA01B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				828031C42BA23FE7006FA01B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		828031C82BA23FEA006FA01B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,19 +514,21 @@
 				INFOPLIST_FILE = ChatterBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studying.ChatterBox;
+				PRODUCT_BUNDLE_IDENTIFIER = petProjectChatterBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -474,19 +544,21 @@
 				INFOPLIST_FILE = ChatterBox/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = studying.ChatterBox;
+				PRODUCT_BUNDLE_IDENTIFIER = petProjectChatterBox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
