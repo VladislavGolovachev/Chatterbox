@@ -73,6 +73,7 @@ final class AuthView: UIView {
         let label = UILabel(text: "")
         
         label.font = UIFont(name: FontConstants.FontName.normal.rawValue, size: 14)
+        label.textColor = .systemRed
         
         return label
     }()
@@ -158,7 +159,7 @@ extension AuthView {
         authLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            authLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),//30
+            authLabel.bottomAnchor.constraint(equalTo: instructionLabel.topAnchor, constant: -35),
             authLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
             authLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor)
         ])
@@ -169,18 +170,18 @@ extension AuthView {
         instructionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            instructionLabel.topAnchor.constraint(equalTo: authLabel.bottomAnchor, constant: 35),
+            instructionLabel.bottomAnchor.constraint(equalTo: loginField.topAnchor, constant: -35),
             instructionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             instructionLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
     }
-    //FIXME: Delete
+    
     private func setupLoginFieldConstraints() {
         
         loginField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            loginField.topAnchor.constraint(equalTo: instructionLabel.bottomAnchor, constant: 35),
+            loginField.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -12.5),
             loginField.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             loginField.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
@@ -191,7 +192,7 @@ extension AuthView {
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            passwordField.topAnchor.constraint(equalTo: loginField.bottomAnchor, constant: 25),
+            passwordField.topAnchor.constraint(equalTo: self.centerYAnchor, constant: 12.5),
             passwordField.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             passwordField.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
@@ -202,7 +203,7 @@ extension AuthView {
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoLabel.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 10),
+            infoLabel.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 15),
             infoLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             infoLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10)
         ])
@@ -213,7 +214,7 @@ extension AuthView {
         createAccountButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            createAccountButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 15),
+            createAccountButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 20),
             createAccountButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 10),
             createAccountButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.3),
             createAccountButton.heightAnchor.constraint(equalToConstant: 20)

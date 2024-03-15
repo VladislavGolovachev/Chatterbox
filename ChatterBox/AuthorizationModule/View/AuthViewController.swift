@@ -48,7 +48,7 @@ extension AuthViewController {
             authView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             authView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             authView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            authView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4)
+            authView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.55)
         ])
     }
 }
