@@ -1,5 +1,5 @@
 //
-//  UIFunctions.swift
+//  UIUtils.swift
 //  ChatterBox
 //
 //  Created by Владислав Головачев on 14.03.2024.
